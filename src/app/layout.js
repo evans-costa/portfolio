@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="pt-BR">
       <body className={spaceGrotesk.className}>{children}</body>
     </html>
   );
