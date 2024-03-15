@@ -15,6 +15,11 @@ export const experience = [
     years: 2,
   },
   {
+    id: 6,
+    name: "PostgreSQL",
+    years: 1,
+  },
+  {
     id: 4,
     name: "React",
     years: 1,
@@ -22,11 +27,6 @@ export const experience = [
   {
     id: 5,
     name: "TailwindCSS",
-    years: 1,
-  },
-  {
-    id: 6,
-    name: "Next.js",
     years: 1,
   },
 ];
