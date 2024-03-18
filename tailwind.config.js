@@ -12,9 +12,14 @@ module.exports = {
           "0%": { "background-size": "0 6px " },
           "100%": { "background-size": "100% 6px" },
         },
+        falling: {
+          "0%": { transform: "translateY(-2rem)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         underline: "underline 1s ease-in-out .2s forwards",
+        falling: "falling 1s both",
       },
     },
     colors: {
