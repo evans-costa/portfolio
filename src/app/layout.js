@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
-import "./ui/globals.css";
+import "../styles/globals.css";
 
 const spaceGrotesk = localFont({
-  src: "../assets/fonts/SpaceGrotesk-VariableFont_wght.ttf",
+  src: "../public/fonts/SpaceGrotesk-VariableFont_wght.ttf",
   display: "swap",
 });
 
