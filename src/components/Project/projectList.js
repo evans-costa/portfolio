@@ -16,9 +16,21 @@ export default function ProjectList() {
         <p className="text-gray text-left">{project.description}</p>
         <div className="absolute flex items-center justify-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#000] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-90">
           <div className="flex flex-col items-center gap-y-2 mt-16">
-            <Contact section={project.repo} name={"VER CÓDIGO"} />
+            <a
+              className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
+              href={project.repo}
+              target="_blank"
+              rel="noreferrer">
+              VER CÓDIGO
+            </a>
             {project.page ? (
-              <Contact section={project.page} name={"VER DOCUMENTAÇÃO"} />
+              <a
+                className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
+                href={project.page}
+                target="_blank"
+                rel="noreferrer">
+                VER PROJETO
+              </a>
             ) : (
               ""
             )}
