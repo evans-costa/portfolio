@@ -14,7 +14,7 @@ export const projects = [
     description:
       "Catálogo de produtos por categorias, onde você pode alterar, deletar e excluir produtos e categorias, além de ter acesso ao catálogo completo por owner.",
     tags: ["node.js", "express", "postgresql", "aws"],
-    repo: "https://github.com/evans-costa/catalog-service",
+    repo: "https://github.com/evans-costa/catalog-services",
     page: "https://evans-costa.github.io/catalog-services/",
   },
   {
@@ -41,7 +41,7 @@ export const projects = [
     description:
       "Um bot do Discord que gera um QR Code personalizável com qualquer informação que você desejar (seu e-mail, sua conta do GitHub, seu perfil do LinkedIn...).",
     tags: ["node.js", "discord.js", "Google API"],
-    repo: "https://github.com/evans-costa/catalog-service",
+    repo: "https://github.com/evans-costa/discord-bot",
     page: "",
   },
   {
