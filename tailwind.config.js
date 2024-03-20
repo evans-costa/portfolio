@@ -28,5 +28,5 @@ module.exports = {
       white: "#FFFFFF",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss"), require("autoprefixer")],
 };
