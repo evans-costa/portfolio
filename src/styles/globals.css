@@ -38,6 +38,23 @@
     line-height: 32px;
     font-weight: bold;
   }
+
+  footer {
+    background-color: rgb(var(--background-secondary));
+  }
+}
+
+@layer components {
+  .autofill-text:-webkit-autofill {
+    -webkit-text-fill-color: white;
+  }
+
+  .text-input {
+    @apply autofill-text; /* set text colour (white) */
+    @apply autofill:shadow-[inset_0_0_0px_1000px_#242424]; /* set 'background' colour (black)*/
+    @apply autofill:text-base; /* set font size */
+    @apply autofill:text-white;
+  }
 }
 
 @layer utilities {
