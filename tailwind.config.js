@@ -26,6 +26,7 @@ module.exports = {
       green: "#4EE1A0",
       gray: "#D9D9D9",
       white: "#FFFFFF",
+      red: "#FF6F5B",
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],
