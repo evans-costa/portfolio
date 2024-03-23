@@ -74,7 +74,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 flex flex-col gap-8">
+    <form
+      id="contact"
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full xl:w-1/2 flex flex-col gap-8">
       <Toaster position="top-right" />
       <input
         type="hidden"
@@ -96,7 +99,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           placeholder="NOME"
-          className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input uppercase text-white placeholder:text-gray text-base -tracking-[0.22px] 
+          className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
             ${errors.name ? "border-red" : "focus:border-green"}`}></input>
         {errors.name && (
           <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">{errors.name?.message}</p>
@@ -111,7 +114,7 @@ export default function ContactForm() {
           type="text"
           id="email"
           placeholder="EMAIL"
-          className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input uppercase text-white placeholder:text-gray text-base -tracking-[0.22px] 
+          className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
           ${errors.email ? "border-red" : "focus:border-green"}`}></input>
         {errors.email && (
           <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">
@@ -128,7 +131,7 @@ export default function ContactForm() {
           type="text"
           id="message"
           placeholder="MENSAGEM"
-          className={`bg-[#242424] w-full min-h-[110px] pl-6 pb-4 outline-none border-b border-gray text-input uppercase text-white placeholder:text-gray text-base -tracking-[0.22px] resize-none 
+          className={`bg-[#242424] w-full min-h-[110px] pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] resize-none 
           ${errors.message ? "border-red" : "focus:border-green"}`}></textarea>
         {errors.message && (
           <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">

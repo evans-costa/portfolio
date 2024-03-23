@@ -1,20 +1,19 @@
 import { projects } from "@/lib/project-data";
 
 import FolderIcon from "@/components/Icons/folder-icon";
-import Contact from "@/components/Contact";
 
 export default function ProjectList() {
   return projects.map((project) => (
     <div key={project.id} className="flex flex-col items-start">
-      <div className="relative h-full px-16 py-20 flex flex-col items-center justify-center border border-gray">
+      <div className="relative p-6 md:h-[300px] lg:h-full md:px-10 md:py-8 lg:px-16 lg:py-20 flex flex-col items-center justify-center border border-gray">
         <div className="w-full z-50 flex justify-between items-center mb-6">
-          <FolderIcon width={60} height={60} />
-          <h3 className="link-underline uppercase text-white">
-            {project.title}
-          </h3>
+          <span className="hidden lg:block">
+            <FolderIcon width={60} height={60} />
+          </span>
+          <h3 className="link-underline uppercase text-white">{project.title}</h3>
         </div>
-        <p className="text-gray text-left">{project.description}</p>
-        <div className="absolute flex items-center justify-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#000] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-90">
+        <p className="text-gray text-left line-clamp-5 lg:line-clamp-none">{project.description}</p>
+        <div className="hidden lg:flex absolute items-center justify-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#000] bg-fixed lg:opacity-0 transition duration-300 ease-in-out lg:hover:opacity-90">
           <div className="flex flex-col items-center gap-y-2 mt-16">
             <a
               className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
@@ -37,12 +36,32 @@ export default function ProjectList() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap flex-1 gap-4 mt-2">
+      <div className="flex flex-wrap h-fit gap-4 mt-2">
         {project.tags.map((tag, index) => (
           <span className="uppercase" key={index}>
             {tag}
           </span>
         ))}
+      </div>
+      <div className="lg:hidden w-full flex items-center gap-7 mt-4">
+        <a
+          className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
+          href={project.repo}
+          target="_blank"
+          rel="noreferrer">
+          VER CÓDIGO
+        </a>
+        {project.page ? (
+          <a
+            className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
+            href={project.page}
+            target="_blank"
+            rel="noreferrer">
+            VER PROJETO
+          </a>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   ));

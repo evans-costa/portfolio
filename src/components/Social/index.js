@@ -3,8 +3,8 @@ import LinkedInIcon from "@/components/Icons/linkedin-icon";
 
 export default function Social() {
   return (
-    <div className="flex flex-row justify-between w-full">
-      <span className="text-white text-3xl tracking-[0.5px] font-bold">
+    <div className="flex flex-col gap-4 md:flex-row justify-between items-center w-full max-w-screen-xl">
+      <span className="text-white text-2xl md:text-3xl tracking-[0.5px] font-bold">
         evandrocosta.dev
       </span>
       <span className="flex gap-8">
