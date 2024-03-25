@@ -11,7 +11,6 @@ export default function Social() {
         <a
           className="text-white hover:text-green"
           aria-label="Ícone Perfil Github"
-          aria-describedby="Ícone para acessar o perfil do Github de Evandro Costa"
           href="https://github.com/evans-costa"
           target="_blank"
           rel="noopener noreferrer">
@@ -20,7 +19,6 @@ export default function Social() {
         <a
           className="text-white hover:text-green"
           aria-label="Ícone Perfil LinkedIn"
-          aria-describedby="Ícone para acessar o perfil do LinkedIn de Evandro Costa"
           href="https://www.linkedin.com/in/evandro-souzac/"
           target="_blank"
           rel="noopener noreferrer">

@@ -144,7 +144,6 @@ export default function ContactForm() {
       <button
         type="submit"
         aria-label="Enviar mensagem"
-        aria-describedby="Botão para envio do formulário"
         disabled={isSubmitting}
         className={`self-end uppercase cursor-pointer pb-3 w-fit text-white font-bold tracking-[2.3px] text-base
         ${isSubmitting ? "pointer-events-none" : "link link-underline"}`}>
@@ -156,7 +155,7 @@ export default function ContactForm() {
             <span>Enviando...</span>
           </div>
         ) : (
-          "Enviar mensagem"
+          <span>Enviar mensagem</span>
         )}
       </button>
     </form>
