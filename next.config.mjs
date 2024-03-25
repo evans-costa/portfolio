@@ -7,7 +7,7 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    script-src 'self' *.googletagmanager.com *.google-analytics.com;
     child-src 'self';
     style-src 'self' 'unsafe-inline';
     img-src * blob: data:;
