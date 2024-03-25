@@ -16,18 +16,20 @@ export default function ProjectList() {
         <div className="hidden lg:flex absolute items-center justify-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#000] bg-fixed lg:opacity-0 transition duration-300 ease-in-out lg:hover:opacity-90">
           <div className="flex flex-col items-center gap-y-2 mt-16">
             <a
+              aria-label="Ver Código"
               className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
               href={project.repo}
               target="_blank"
-              rel="noreferrer">
+              rel="noopener noreferrer">
               VER CÓDIGO
             </a>
             {project.page ? (
               <a
+                aria-label="Ver Projeto"
                 className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
                 href={project.page}
                 target="_blank"
-                rel="noreferrer">
+                rel="noopener noreferrer">
                 VER PROJETO
               </a>
             ) : (
@@ -45,18 +47,20 @@ export default function ProjectList() {
       </div>
       <div className="lg:hidden w-full flex items-center gap-7 mt-4">
         <a
+          aria-label="Ver Código"
           className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
           href={project.repo}
           target="_blank"
-          rel="noreferrer">
+          rel="noopener noreferrer">
           VER CÓDIGO
         </a>
         {project.page ? (
           <a
+            aria-label="Ver Projeto"
             className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
             href={project.page}
             target="_blank"
-            rel="noreferrer">
+            rel="noopener noreferrer">
             VER PROJETO
           </a>
         ) : (
