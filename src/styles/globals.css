@@ -73,4 +73,8 @@
   .link-underline:hover {
     @apply text-green bg-[length:100%_2px] bg-[0_100%];
   }
+
+  .link-underline:focus {
+    @apply text-green bg-[length:100%_2px] bg-[0_100%];
+  }
 }

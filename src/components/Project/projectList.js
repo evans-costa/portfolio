@@ -13,10 +13,10 @@ export default function ProjectList() {
           <h3 className="link-underline uppercase text-white">{project.title}</h3>
         </div>
         <p className="text-gray text-left line-clamp-5 lg:line-clamp-none">{project.description}</p>
-        <div className="hidden lg:flex absolute items-center justify-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#000] bg-fixed lg:opacity-0 transition duration-300 ease-in-out lg:hover:opacity-90">
+        <div className="hidden lg:flex absolute items-center justify-center bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#000] bg-fixed lg:opacity-0 transition duration-300 ease-in-out lg:hover:opacity-90 lg:focus-within:opacity-90">
           <div className="flex flex-col items-center gap-y-2 mt-16">
             <a
-              aria-label="Ver Código"
+              aria-label={`Ver Código do projeto ${project.title}`}
               className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
               href={project.repo}
               target="_blank"
@@ -25,7 +25,7 @@ export default function ProjectList() {
             </a>
             {project.page ? (
               <a
-                aria-label="Ver Projeto"
+                aria-label={`Ver projeto ${project.title}`}
                 className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
                 href={project.page}
                 target="_blank"
