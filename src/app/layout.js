@@ -1,4 +1,6 @@
 import localFont from "next/font/local";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import "../styles/globals.css";
 
 import Footer from "@/components/Sections/Footer";
@@ -21,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" dir="ltr">
       <body className={spaceGrotesk.className}>
+        <GoogleAnalytics gaId="G-Q0LP4WVTPJ" />
         <Header />
         {children}
         <Footer />
