@@ -47,7 +47,7 @@ export default function ProjectList() {
       </div>
       <div className="lg:hidden w-full flex items-center gap-7 mt-4">
         <a
-          aria-label="Ver Código"
+          aria-label={`Ver Código do projeto ${project.title}`}
           className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
           href={project.repo}
           target="_blank"
@@ -56,7 +56,7 @@ export default function ProjectList() {
         </a>
         {project.page ? (
           <a
-            aria-label="Ver Projeto"
+            aria-label={`Ver projeto ${project.title}`}
             className="pb-3 w-fit text-white font-bold tracking-[2.3px] link link-underline text-base"
             href={project.page}
             target="_blank"
