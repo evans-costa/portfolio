@@ -80,13 +80,13 @@ export default function ContactForm() {
       className="w-full xl:w-1/2 flex flex-col gap-8">
       <Toaster position="top-right" />
       <input
+        autoComplete="off"
         type="hidden"
         value="a3c3048e-029a-49c3-805b-312915a41e36"
-        {...register("access_key")}
-      />
+        {...register("access_key")}></input>
       <input
+        autoComplete="off"
         type="checkbox"
-        id=""
         className="hidden"
         style={{ display: "none" }}
         {...register("botcheck")}></input>
@@ -97,6 +97,7 @@ export default function ContactForm() {
         <input
           {...register("name")}
           type="text"
+          aria-label="Nome"
           id="name"
           placeholder="NOME"
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
@@ -113,6 +114,7 @@ export default function ContactForm() {
           {...register("email")}
           type="text"
           id="email"
+          aria-label="Email"
           placeholder="EMAIL"
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
           ${errors.email ? "border-red" : "focus:border-green"}`}></input>
@@ -128,8 +130,8 @@ export default function ContactForm() {
         </label>
         <textarea
           {...register("message")}
-          type="text"
           id="message"
+          aria-label="Mensagem"
           placeholder="MENSAGEM"
           className={`bg-[#242424] w-full min-h-[110px] pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] resize-none 
           ${errors.message ? "border-red" : "focus:border-green"}`}></textarea>
@@ -141,6 +143,8 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
+        aria-label="Enviar mensagem"
+        aria-describedby="Botão para envio do formulário"
         disabled={isSubmitting}
         className={`self-end uppercase cursor-pointer pb-3 w-fit text-white font-bold tracking-[2.3px] text-base
         ${isSubmitting ? "pointer-events-none" : "link link-underline"}`}>
