@@ -1,5 +1,5 @@
 import PatternRings from "@/components/Icons/pattern-rings";
-import Contact from "@/components/Contact";
+import Contact from "@/components/ContactLink";
 
 export default function Hero() {
   return (
@@ -12,11 +12,11 @@ export default function Hero() {
         </div>
         <h1 className="text-[40px] leading-10 sm:text-7xl lg:text-[88px] sm:text-pretty text-center md:text-left text-white mb-2">
           <span>Bom te ver aqui! </span>
-          <br className="sm:none" />
+          <br className="sm:none"></br>
           <span className="text text-underline">Eu sou Evandro Costa.</span>
         </h1>
         <p className="mt-10 w-full text-balance text-center md:w-2/3 md:text-left">
-          Sou um desenvolvedor fullstack no Brasil, <br />
+          Sou um desenvolvedor fullstack no Brasil, <br></br>
           comprometido em criar soluções digitais inovadoras e eficientes para desafios complexos.
         </p>
       </div>
