@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" dir="ltr">
       <body className={spaceGrotesk.className}>
-        <GoogleAnalytics gaId="G-Q0LP4WVTPJ" />
+        <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
         <Header />
         {children}
         <Footer />

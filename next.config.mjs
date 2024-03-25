@@ -7,12 +7,12 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' *.googletagmanager.com *.google-analytics.com;
+    script-src 'self' https://*.googletagmanager.com https://google-analytics.com;
     child-src 'self';
     style-src 'self' 'unsafe-inline';
-    img-src * blob: data:;
+    img-src * https://*.google-analytics.com https://*.googletagmanager.com blob: data:;
     media-src 'self';
-    connect-src *;
+    connect-src * https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
     font-src 'self';
 `;
 
