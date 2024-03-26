@@ -1,4 +1,3 @@
-import Header from "@/components/Sections/Header";
 import Hero from "@/components/Sections/Hero";
 import Experiences from "@/components/Sections/Experiences";
 import Projects from "@/components/Sections/Projects";

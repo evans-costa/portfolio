@@ -22,8 +22,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" dir="ltr">
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
       <body className={spaceGrotesk.className}>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         <Header />
         {children}
         <Footer />
