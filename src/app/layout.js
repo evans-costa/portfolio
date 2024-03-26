@@ -1,13 +1,13 @@
-import localFont from "next/font/local";
 import { GoogleTagManager } from "@next/third-parties/google";
+import localFont from "next/font/local";
 
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
 import Footer from "@/components/Sections/Footer";
 import Header from "@/components/Sections/Header";
 
 const spaceGrotesk = localFont({
-  src: "../public/fonts/SpaceGrotesk-VariableFont_wght.ttf",
+  src: "../../public/fonts/SpaceGrotesk-VariableFont_wght.ttf",
   display: "swap",
 });
 
