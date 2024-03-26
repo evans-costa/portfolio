@@ -5,25 +5,10 @@ const nextConfig = {
   },
 };
 
-const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' https://*.googletagmanager.com https://google-analytics.com;
-    child-src 'self';
-    style-src 'self' 'unsafe-inline';
-    img-src * https://*.google-analytics.com https://*.googletagmanager.com blob: data:;
-    media-src 'self';
-    connect-src * https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
-    font-src 'self';
-`;
-
 const securityHeaders = [
   {
     key: "Referrer-Policy",
     value: "origin-when-cross-origin",
-  },
-  {
-    key: "Content-Security-Policy",
-    value: ContentSecurityPolicy.replace(/\n/g, ""),
   },
   {
     key: "X-DNS-Prefetch-Control",
