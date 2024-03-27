@@ -31,5 +31,3 @@ Esse site foi construído com os seguintes pacotes / tecnologias:
 - [React Hot Toast](https://react-hot-toast.com/)
 - [React Hook Form](https://react-hook-form.com/)
 - [Web3Forms](https://web3forms.com/)
-
-
