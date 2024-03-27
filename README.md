@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Portfólio pessoal feito com <a href="https://nextjs.org/">Next.js</a> e hospedado na <a href="https://vercel.com">Vercel </a> com design do <a href="https://frontendmentor.io">Frontend Mentor </a>
+  Portfólio pessoal feito com <a href="https://nextjs.org/">Next.js</a> e hospedado na <a href="https://vercel.com">Vercel</a> com design do <a href="https://frontendmentor.io">Frontend Mentor </a>
 </p>
 
 <p align="center">
