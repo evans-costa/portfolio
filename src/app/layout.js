@@ -1,4 +1,4 @@
-import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 
 import "@/styles/globals.css";
@@ -22,10 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" dir="ltr">
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
       <body className={spaceGrotesk.className}>
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
