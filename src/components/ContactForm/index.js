@@ -1,26 +1,13 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { contactFormSchema } from "@/schemas/contactFormSchema";
 
 import toast, { Toaster } from "react-hot-toast";
-import Spin from "@/components/Icons/spin-icon";
 
-const contactFormSchema = z
-  .object({
-    name: z.string().min(1, { message: "Nome é obrigatório" }),
-    email: z
-      .string()
-      .min(1, { message: "Email é obrigatório" })
-      .email({ message: "Desculpe, formato do email inválido" }),
-    message: z
-      .string()
-      .min(1, { message: "Mensagem é obrigatória" })
-      .max(500, { message: "Sua mensagem deve conter até 500 caracteres" }),
-    access_key: z.string(),
-  })
-  .required();
+import Spin from "@/components/Icons/spinIcon";
 
 export default function ContactForm() {
   const {
@@ -100,6 +87,7 @@ export default function ContactForm() {
           aria-label="Nome"
           id="name"
           placeholder="NOME"
+          autoComplete="name"
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
             ${errors.name ? "border-red" : "focus:border-green"}`}></input>
         {errors.name && (
@@ -116,6 +104,7 @@ export default function ContactForm() {
           id="email"
           aria-label="Email"
           placeholder="EMAIL"
+          autoComplete="email"
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
           ${errors.email ? "border-red" : "focus:border-green"}`}></input>
         {errors.email && (
