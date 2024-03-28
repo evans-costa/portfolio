@@ -1,7 +1,17 @@
 {
-  "name": "portoflio-dev",
-  "version": "0.1.0",
-  "private": true,
+  "name": "portfolio",
+  "description": "Personal developer portfolio",
+  "version": "1.0.0",
+  "author": "Evandro Costa <evandro.souzac@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evans-costa/portfolio"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "homepage": "https://evandrocosta.dev.br/",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +21,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
-    "@next/third-parties": "^14.1.4",
     "@vercel/analytics": "^1.2.2",
     "eslint-config-next": "^14.1.4",
     "next": "^14.1.4",
