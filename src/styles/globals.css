@@ -54,6 +54,7 @@
     @apply autofill:shadow-[inset_0_0_0px_1000px_#242424]; /* set 'background' colour (black)*/
     @apply autofill:text-base; /* set font size */
     @apply autofill:text-white;
+    @apply autofill:caret-white;
   }
 }
 
