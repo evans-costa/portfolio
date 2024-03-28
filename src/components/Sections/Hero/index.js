@@ -1,4 +1,4 @@
-import PatternRings from "@/components/Icons/pattern-rings";
+import PatternRings from "@/components/Icons/patternRings";
 import Contact from "@/components/ContactLink";
 
 export default function Hero() {

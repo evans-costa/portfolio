@@ -1,5 +1,5 @@
 import ContactForm from "@/components/ContactForm";
-import PatternRings from "@/components/Icons/pattern-rings";
+import PatternRings from "@/components/Icons/patternRings";
 import Social from "@/components/Social";
 
 export default function Footer() {

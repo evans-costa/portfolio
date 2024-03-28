@@ -1,4 +1,4 @@
-import PatternRings from "@/components/Icons/pattern-rings";
+import PatternRings from "@/components/Icons/patternRings";
 import ExperienceList from "@/components/Experience/experienceList";
 
 export default function Experiences() {

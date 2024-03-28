@@ -1,6 +1,6 @@
-import { projects } from "@/lib/project-data";
+import { projects } from "@/lib/projectData";
 
-import FolderIcon from "@/components/Icons/folder-icon";
+import FolderIcon from "@/components/Icons/folderIcon";
 
 export default function ProjectList() {
   return projects.map((project) => (

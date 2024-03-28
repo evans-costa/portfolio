@@ -1,5 +1,6 @@
-import GitHubIcon from "@/components/Icons/github-icon";
-import LinkedInIcon from "@/components/Icons/linkedin-icon";
+import GitHubIcon from "@/components/Icons/githubIcon";
+import LinkedInIcon from "@/components/Icons/linkedinIcon";
+import FrontendMentorIcon from "@/components/Icons/frontendMentorIcon";
 
 export default function Social() {
   return (
@@ -23,6 +24,14 @@ export default function Social() {
           target="_blank"
           rel="noopener noreferrer">
           <LinkedInIcon />
+        </a>
+        <a
+          className="text-white hover:text-green"
+          aria-label="Ícone Perfil Frontend Mentor"
+          href="https://www.frontendmentor.io/profile/evans-costa"
+          target="_blank"
+          rel="noopener noreferrer">
+          <FrontendMentorIcon />
         </a>
       </span>
     </div>
