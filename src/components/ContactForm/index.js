@@ -65,7 +65,7 @@ export default function ContactForm() {
       id="contact"
       onSubmit={handleSubmit(onSubmit)}
       className="w-full xl:w-1/2 flex flex-col gap-8">
-      <Toaster position="top-right" />
+      <Toaster position="top-center" />
       <input
         autoComplete="off"
         type="hidden"
@@ -134,17 +134,17 @@ export default function ContactForm() {
         type="submit"
         aria-label="Enviar mensagem"
         disabled={isSubmitting}
-        className={`self-end uppercase cursor-pointer pb-3 w-fit text-white font-bold tracking-[2.3px] text-base
-        ${isSubmitting ? "pointer-events-none" : "link link-underline"}`}>
+        className={`self-end uppercase cursor-pointer w-fit text-white font-bold tracking-[2.3px] text-base
+        ${isSubmitting ? "pointer-events-none" : "pointer-events-auto"}`}>
         {isSubmitting ? (
           <div className="flex justify-center items-center gap-2">
             <span className="animate-spin">
               <Spin />
             </span>{" "}
-            <span>Enviando...</span>
+            Enviando...
           </div>
         ) : (
-          <span>Enviar mensagem</span>
+          <span className="pb-3 link-underline">Enviar mensagem</span>
         )}
       </button>
     </form>
