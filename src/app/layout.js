@@ -1,9 +1,7 @@
-import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 
 import "@/styles/globals.css";
 
-import Footer from "@/components/Sections/Footer";
 import Header from "@/components/Sections/Header";
 
 const spaceGrotesk = localFont({
@@ -25,8 +23,6 @@ export default function RootLayout({ children }) {
       <body className={spaceGrotesk.className}>
         <Header />
         {children}
-        <Analytics />
-        <Footer />
       </body>
     </html>
   );
