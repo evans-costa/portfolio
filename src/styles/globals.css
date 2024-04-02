@@ -16,7 +16,7 @@
     background: rgb(var(--background-primary));
     font-size: 18px;
     line-height: 28px;
-    font-weight: normal;
+    font-weight: 500;
   }
 
   h1 {
