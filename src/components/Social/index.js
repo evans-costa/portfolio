@@ -1,12 +1,15 @@
 import GitHubIcon from "@/components/Icons/githubIcon";
 import LinkedInIcon from "@/components/Icons/linkedinIcon";
 import FrontendMentorIcon from "@/components/Icons/frontendMentorIcon";
+import Link from "next/link";
 
 export default function Social() {
   return (
     <div className="flex flex-col gap-4 md:flex-row justify-between items-center w-full max-w-screen-xl">
       <span className="text-white text-2xl md:text-3xl tracking-[0.5px] font-bold">
-        evandrocosta.dev
+        <Link aria-label="Link para retornar a home" href="/">
+          evandrocosta.dev
+        </Link>
       </span>
       <span className="flex gap-8">
         <a
