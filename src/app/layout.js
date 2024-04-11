@@ -10,10 +10,16 @@ const spaceGrotesk = localFont({
 });
 
 export const metadata = {
-  title: "Evandro Costa - Fullstack Developer",
+  title: "Evandro Costa - Dev Fullstack",
   description: "Bom tem ver aqui! 👋🏻 Sou Evandro Costa, desenvolvedor fullstack",
   alternates: {
     canonical: "https://evandrocosta.dev.br",
+  },
+  openGraph: {
+    title: "Evandro Costa - Dev Fullstack",
+    description: "Bom tem ver aqui! 👋🏻 Sou Evandro Costa, desenvolvedor fullstack",
+    url: "https://evandrocosta.dev.br",
+    siteName: "Evandro Costa - Dev Fullstack",
   },
 };
 
