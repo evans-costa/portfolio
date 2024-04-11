@@ -10,6 +10,7 @@ export default function NotFound() {
       </div>
       <p className="text-xl sm:text-3xl">Página não encontrada</p>
       <Link
+        aria-label="Link para retornar a home"
         className="mt-4 text-lg sm:text-xl underline decoration-green underline-offset-4 hover:text-green"
         href="/">
         Retornar à tela inicial
