@@ -19,7 +19,16 @@ export const metadata = {
     title: "Evandro Costa - Dev Fullstack",
     description: "Bom tem ver aqui! 👋🏻 Sou Evandro Costa, desenvolvedor fullstack",
     url: "https://evandrocosta.dev.br",
+    images: [
+      {
+        url: "https://evandrocosta.dev.br/profile.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview image for Evandro Costa",
+      },
+    ],
     siteName: "Evandro Costa - Dev Fullstack",
+    type: "website",
   },
 };
 
