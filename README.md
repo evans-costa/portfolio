@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <a href="https://app.netlify.com/sites/brittanychiang/deploys" target="_blank">
-    <img src="https://therealsujitk-vercel-badge.vercel.app/?app=portfolio-gules-seven-46" alt="Vercel Deploy">
+  <a href="https://deploy-badge.vercel.app/vercel/portfolio-gules-seven-46.vercel.app?style=for-the-badge"" target="_blank">
+   <img src="https://deploy-badge.vercel.app/vercel/portfolio-gules-seven-46?style=for-the-badge"" alt="Vercel Deploy"></img>
   </a>
 </p>
 
