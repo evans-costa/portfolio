@@ -7,7 +7,9 @@
     "type": "git",
     "url": "https://github.com/evans-costa/portfolio"
   },
-  "keywords": ["portfolio"],
+  "keywords": [
+    "portfolio"
+  ],
   "homepage": "https://evandrocosta.dev.br/",
   "license": "MIT",
   "scripts": {

@@ -45,9 +45,10 @@ export default function ContactForm() {
         e?.target && (e.target as HTMLFormElement).reset();
         reset();
       } else {
-        const errorMsg = validatedResponse.body?.message || validatedResponse.message || "Erro desconhecido";
+        const errorMsg =
+          validatedResponse.body?.message || validatedResponse.message || "Erro desconhecido";
         console.error("Erro no envio:", errorMsg, validatedResponse);
-        
+
         toast("Erro ao enviar a mensagem", {
           duration: 4000,
           icon: "❌",
@@ -62,7 +63,7 @@ export default function ContactForm() {
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
       console.error("Erro ao enviar formulário:", errorMessage);
-      
+
       toast("Erro ao enviar a mensagem", {
         duration: 4000,
         icon: "❌",
@@ -77,10 +78,24 @@ export default function ContactForm() {
   };
 
   return (
-    <form id="contact" onSubmit={handleSubmit(onSubmit)} className="w-full xl:w-1/2 flex flex-col gap-8">
+    <form
+      id="contact"
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full xl:w-1/2 flex flex-col gap-8">
       <Toaster position="top-center" />
-      <input autoComplete="off" type="hidden" value="a3c3048e-029a-49c3-805b-312915a41e36" {...register("access_key")} />
-      <input autoComplete="off" type="checkbox" className="hidden" style={{ display: "none" }} {...register("botcheck")} />
+      <input
+        autoComplete="off"
+        type="hidden"
+        value="a3c3048e-029a-49c3-805b-312915a41e36"
+        {...register("access_key")}
+      />
+      <input
+        autoComplete="off"
+        type="checkbox"
+        className="hidden"
+        style={{ display: "none" }}
+        {...register("botcheck")}
+      />
       <div className="bg-[#242424] flex flex-col">
         <label htmlFor="name" className="sr-only">
           Nome
@@ -95,7 +110,9 @@ export default function ContactForm() {
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
             ${errors.name ? "border-red" : "focus:border-green"}`}
         />
-        {errors.name && <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">{errors.name?.message}</p>}
+        {errors.name && (
+          <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">{errors.name?.message}</p>
+        )}
       </div>
       <div className="bg-[#242424] flex flex-col">
         <label htmlFor="email" className="sr-only">
@@ -111,7 +128,11 @@ export default function ContactForm() {
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
           ${errors.email ? "border-red" : "focus:border-green"}`}
         />
-        {errors.email && <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">{errors.email?.message}</p>}
+        {errors.email && (
+          <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">
+            {errors.email?.message}
+          </p>
+        )}
       </div>
       <div className="bg-[#242424] flex flex-col">
         <label htmlFor="message" className="sr-only">
@@ -125,7 +146,11 @@ export default function ContactForm() {
           className={`bg-[#242424] w-full min-h-[110px] pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] resize-none 
           ${errors.message ? "border-red" : "focus:border-green"}`}
         />
-        {errors.message && <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">{errors.message?.message}</p>}
+        {errors.message && (
+          <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">
+            {errors.message?.message}
+          </p>
+        )}
       </div>
       <button
         type="submit"
