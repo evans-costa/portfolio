@@ -11,13 +11,13 @@ const spaceGrotesk = localFont({
 
 export const metadata = {
   title: "Evandro Costa - Dev Fullstack",
-  description: "Bom tem ver aqui! 👋🏻 Sou Evandro Costa, desenvolvedor fullstack",
+  description: "Bom tem ver aqui! 👋 Sou Evandro Costa, desenvolvedor fullstack",
   alternates: {
     canonical: "https://evandrocosta.dev.br",
   },
   openGraph: {
     title: "Evandro Costa - Dev Fullstack",
-    description: "Bom tem ver aqui! 👋🏻 Sou Evandro Costa, desenvolvedor fullstack",
+    description: "Bom tem ver aqui! 👋 Sou Evandro Costa, desenvolvedor fullstack",
     url: "https://evandrocosta.dev.br",
     images: [
       {
@@ -32,7 +32,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" dir="ltr">
       <body className={spaceGrotesk.className}>

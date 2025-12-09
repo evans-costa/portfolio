@@ -1,11 +1,11 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-
+import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactFormSchema } from "@/schemas/contactFormSchema";
-
 import toast, { Toaster } from "react-hot-toast";
+
+import { contactFormSchema, ContactFormSchema } from "@/schemas/contactFormSchema";
+import { web3FormsResponseSchema } from "@/types/web3forms";
 
 import Spin from "@/components/Icons/spinIcon";
 
@@ -15,9 +15,9 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm({ resolver: zodResolver(contactFormSchema) });
+  } = useForm<ContactFormSchema>({ resolver: zodResolver(contactFormSchema) });
 
-  const onSubmit = async (data, e) => {
+  const onSubmit: SubmitHandler<ContactFormSchema> = async (data, e) => {
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -29,8 +29,9 @@ export default function ContactForm() {
       });
 
       const responseBody = await response.json();
+      const validatedResponse = web3FormsResponseSchema.parse(responseBody);
 
-      if (responseBody.success) {
+      if (validatedResponse.success) {
         toast("Mensagem enviada com sucesso", {
           duration: 4000,
           icon: "✅",
@@ -41,12 +42,28 @@ export default function ContactForm() {
             padding: "8px",
           },
         });
-        e.target.reset();
+        e?.target && (e.target as HTMLFormElement).reset();
         reset();
       } else {
-        console.log(responseBody.message);
+        const errorMsg =
+          validatedResponse.body?.message || validatedResponse.message || "Erro desconhecido";
+        console.error("Erro no envio:", errorMsg, validatedResponse);
+
+        toast("Erro ao enviar a mensagem", {
+          duration: 4000,
+          icon: "❌",
+          style: {
+            background: "rgb(255 111 91)",
+            color: "rgb(21 21 21)",
+            border: "1px solid rgb(21 21 21)",
+            padding: "8px",
+          },
+        });
       }
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
+      console.error("Erro ao enviar formulário:", errorMessage);
+
       toast("Erro ao enviar a mensagem", {
         duration: 4000,
         icon: "❌",
@@ -70,13 +87,15 @@ export default function ContactForm() {
         autoComplete="off"
         type="hidden"
         value="a3c3048e-029a-49c3-805b-312915a41e36"
-        {...register("access_key")}></input>
+        {...register("access_key")}
+      />
       <input
         autoComplete="off"
         type="checkbox"
         className="hidden"
         style={{ display: "none" }}
-        {...register("botcheck")}></input>
+        {...register("botcheck")}
+      />
       <div className="bg-[#242424] flex flex-col">
         <label htmlFor="name" className="sr-only">
           Nome
@@ -89,7 +108,8 @@ export default function ContactForm() {
           placeholder="NOME"
           autoComplete="name"
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
-            ${errors.name ? "border-red" : "focus:border-green"}`}></input>
+            ${errors.name ? "border-red" : "focus:border-green"}`}
+        />
         {errors.name && (
           <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">{errors.name?.message}</p>
         )}
@@ -106,7 +126,8 @@ export default function ContactForm() {
           placeholder="EMAIL"
           autoComplete="email"
           className={`bg-[#242424] w-full pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] 
-          ${errors.email ? "border-red" : "focus:border-green"}`}></input>
+          ${errors.email ? "border-red" : "focus:border-green"}`}
+        />
         {errors.email && (
           <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">
             {errors.email?.message}
@@ -123,7 +144,8 @@ export default function ContactForm() {
           aria-label="Mensagem"
           placeholder="MENSAGEM"
           className={`bg-[#242424] w-full min-h-[110px] pl-6 pb-4 outline-none border-b border-gray text-input text-white placeholder:text-gray text-base -tracking-[0.22px] resize-none 
-          ${errors.message ? "border-red" : "focus:border-green"}`}></textarea>
+          ${errors.message ? "border-red" : "focus:border-green"}`}
+        />
         {errors.message && (
           <p className="self-end p-1 text-xs -tracking=[0.17px] text-red">
             {errors.message?.message}

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Social() {
   return (
-    <div className="flex flex-col mx-auto gap-4 md:flex-row justify-between items-center w-min sm:w-full max-w-screen-xl">
+    <div className="flex flex-col mx-auto gap-4 md:flex-row justify-between items-center w-min sm:w-full max-w-7xl">
       <span className="text-white text-2xl md:text-3xl tracking-[0.5px] font-bold px-5">
         <Link aria-label="Link para retornar a home" href="/">
           evandrocosta.dev
