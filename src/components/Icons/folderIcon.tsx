@@ -1,4 +1,4 @@
-export default function FolderIcon({ width, height }) {
+export default function FolderIcon({ width, height }: { width: number; height: number }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

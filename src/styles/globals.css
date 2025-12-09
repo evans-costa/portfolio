@@ -1,6 +1,86 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-green: #4ee1a0;
+  --color-gray: #d9d9d9;
+  --color-white: #ffffff;
+  --color-red: #ff6f5b;
+
+  --animate-underline: underline 1s ease-in-out 0.2s forwards;
+  --animate-falling: falling 1s both;
+
+  @keyframes underline {
+    0% {
+      background-size: 0 6px;
+    }
+    100% {
+      background-size: 100% 6px;
+    }
+  }
+  @keyframes falling {
+    0% {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility autofill-text {
+  &:-webkit-autofill {
+    -webkit-text-fill-color: white;
+  }
+}
+
+@utility text-input {
+  @apply autofill-text; /* set text colour (white) */
+  @apply autofill:shadow-[inset_0_0_0px_1000px_#242424]; /* set 'background' colour (black)*/
+  @apply autofill:text-base; /* set font size */
+  @apply autofill:text-white;
+  @apply autofill:caret-white;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-underline {
+  @apply bg-linear-to-b from-green to-green bg-no-repeat bg-size-[0%_6px] bg-position-[0_calc(90%-2px)] animate-underline;
+}
+
+@utility link-underline {
+  @apply bg-linear-to-b from-green to-green bg-no-repeat bg-size-[0_2px] bg-position-[0_calc(100%-2px)] transition-all duration-500 ease-in-out;
+
+  &:hover {
+    @apply text-green bg-size-[100%_2px];
+  }
+
+  &:focus {
+    @apply text-green bg-size-[100%_2px];
+  }
+}
 
 @layer base {
   * {
@@ -41,41 +121,5 @@
 
   footer {
     background-color: rgb(var(--background-secondary));
-  }
-}
-
-@layer components {
-  .autofill-text:-webkit-autofill {
-    -webkit-text-fill-color: white;
-  }
-
-  .text-input {
-    @apply autofill-text; /* set text colour (white) */
-    @apply autofill:shadow-[inset_0_0_0px_1000px_#242424]; /* set 'background' colour (black)*/
-    @apply autofill:text-base; /* set font size */
-    @apply autofill:text-white;
-    @apply autofill:caret-white;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-underline {
-    @apply bg-gradient-to-b from-green to-green bg-no-repeat bg-[length:0%_6px] bg-[0_90%] animate-underline;
-  }
-
-  .link-underline {
-    @apply bg-gradient-to-b from-green to-green bg-no-repeat bg-[length:0_2px] bg-[0_100%] transition-all duration-500 ease-in-out;
-  }
-
-  .link-underline:hover {
-    @apply text-green bg-[length:100%_2px] bg-[0_100%];
-  }
-
-  .link-underline:focus {
-    @apply text-green bg-[length:100%_2px] bg-[0_100%];
   }
 }
